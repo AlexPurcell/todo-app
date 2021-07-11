@@ -1,4 +1,4 @@
-# Node JS Todo Application
+ Node JS Todo Application
 ## Core 
 
 + PostgresSQL - absolute basics. Single table database.
