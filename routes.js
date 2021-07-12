@@ -8,10 +8,7 @@ router.get('/', (req, res) => {
 })
 
 
-let todos = [
-  { title: 'Wash the dishes', complete: true },
-  { title: 'Do the laundry', complete: false },
-];
+let todos = [];
 
 
 router.post("/add_todo", (req, res) => {
