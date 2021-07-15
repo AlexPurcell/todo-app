@@ -14,6 +14,7 @@ let todos = [];
 
 
 router.post("/add_todo", (req, res) => {
+
 // Next Step: IF there is a TODO that is the same exact thing, I should check to see if it is equal to the same input then throw an error.
 
 
@@ -37,21 +38,27 @@ router.post("/add_todo", (req, res) => {
 
 const postedTitle = req.body.add_todo_input;
 
+let cappedTitle = postedTitle.charAt(0).toUpperCase() + postedTitle.slice(1)
+
 
 let alreadyExists = false;
 
 for (let i = 0; i < todos.length; i++) {
   const item = todos[i];
-  if(item.title === postedTitle) {
+  if(item.title === cappedTitle) {
     alreadyExists = true;
     break;
   }
 }
 
+
+
+
+
 console.log('Already Exists?:', alreadyExists)
 
 if (alreadyExists === false) {
-  todos.push({title: postedTitle, complete: false})
+  todos.push({title: cappedTitle, complete: false})
 }
 else {
   console.log("This TODO already exists!")
