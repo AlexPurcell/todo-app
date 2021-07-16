@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 
 let todos = [];
 
+let preventedWords = [{Prevented: "Test"}]
 
 
 
@@ -36,9 +37,10 @@ router.post("/add_todo", (req, res) => {
 
 // METHOD 2
 
+
 const postedTitle = req.body.add_todo_input;
 
-let cappedTitle = postedTitle.charAt(0).toUpperCase() + postedTitle.slice(1)
+let cappedTitle = postedTitle.charAt(0).toUpperCase() + postedTitle.slice(1).toLowerCase()
 
 
 let alreadyExists = false;
@@ -52,10 +54,7 @@ for (let i = 0; i < todos.length; i++) {
 }
 
 
-
-
-
-console.log('Already Exists?:', alreadyExists)
+console.log('Already Exists?:', alreadyExists, ':', cappedTitle)
 
 if (alreadyExists === false) {
   todos.push({title: cappedTitle, complete: false})
