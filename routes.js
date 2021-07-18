@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
 
 let todos = [];
 
-let preventedWords = [{Prevented: "Test"}]
 
 
 
@@ -41,7 +40,6 @@ router.post("/add_todo", (req, res) => {
 const postedTitle = req.body.add_todo_input;
 
 let cappedTitle = postedTitle.charAt(0).toUpperCase() + postedTitle.slice(1).toLowerCase()
-
 
 let alreadyExists = false;
 
