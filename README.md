@@ -3,7 +3,6 @@
 
 ## Core 
 
-+ PostgresSQL - absolute basics. Single table database.
 + Node.JS
 + Javascript
 + EJS - templating
